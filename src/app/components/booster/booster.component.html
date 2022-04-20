@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button [ngClass]="btnClass" type="button" (click)="changueValue(-5)">
+          <i class="fa fa-minus"></i>
+        </button>
+      </span>
+      <input
+        min="0"
+        max="100"
+        type="number"
+        [ngClass]="{ 'is-invalid': prog > 100 || prog < 0 }"
+        class="form-control"
+        placeholder="Percentaje"
+        (ngModelChange)="onChange($event)"
+        [(ngModel)]="prog"
+      />
+      <span class="input-group-btn">
+        <button [ngClass]="btnClass" type="button" (click)="changueValue(5)">
+          <i class="fa fa-plus"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>

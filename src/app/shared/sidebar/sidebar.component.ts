@@ -8,15 +8,10 @@ import { SidebarService } from 'src/app/services/sidebar.service';
   styles: [],
 })
 export class SidebarComponent {
-  public menu: any[] = [];
-
   constructor(
-    private sidebarService: SidebarService,
+    public sidebarService: SidebarService,
     private auth: AuthenticationService
-  ) {
-    this.menu = this.sidebarService.menu;
-    console.log(this.menu);
-  }
+  ) {}
 
   logOut() {
     this.auth.logOut();

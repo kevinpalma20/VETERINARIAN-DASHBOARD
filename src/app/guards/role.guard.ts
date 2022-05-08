@@ -7,14 +7,12 @@ import {
   UrlTree,
 } from '@angular/router';
 
-import { tap, map, Observable } from 'rxjs';
-
 import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class RoleGuard implements CanActivate {
   constructor(
     private authService: AuthenticationService,
     private router: Router
@@ -22,11 +20,12 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean> {
-    return this.authService.verify().pipe(
-      tap((is) => {
-        if (!is) this.router.navigateByUrl('/login');
-      })
-    );
+  ): boolean {
+    if (this.authService.admin) {
+      return true;
+    } else {
+      this.router.navigateByUrl('/dashboard');
+      return false;
+    }
   }
 }

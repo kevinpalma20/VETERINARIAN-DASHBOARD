@@ -1,33 +1,16 @@
 import { Injectable } from '@angular/core';
 
+import { Menu } from '../model/response/routes/MenuReponse';
+
 @Injectable({
   providedIn: 'root',
 })
 export class SidebarService {
-  menu: any[] = [
-    {
-      title: 'Dashboard',
-      icon: 'mdi mdi-gauge',
-      submenu: [
-        {
-          title: 'Menú',
-          url: '/',
-        },
-        {
-          title: 'Reportes',
-          url: 'progress',
-        },
-        {
-          title: 'Reportes',
-          url: 'graphical',
-        },
-        {
-          title: 'Configuración',
-          url: 'settings',
-        },
-      ],
-    },
-  ];
+  public menu: Menu[] = [];
 
   constructor() {}
+
+  setMenu() {
+    this.menu = JSON.parse(localStorage.getItem('routes') || '') || [];
+  }
 }

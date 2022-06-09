@@ -1,0 +1,36 @@
+<div
+  tabindex="-1"
+  aria-hidden="true"
+  class="modal fade"
+  id="modalUpdateFile"
+  aria-labelledby="modalUpdateFileLabel"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Actualizar foto</h4>
+        <app-button-modal-close></app-button-modal-close>
+      </div>
+
+      <div class="modal-body">
+        <form
+          id="petform"
+          (ngSubmit)="setImage()"
+          class="form-horizontal form-material"
+        >
+          <div class="form-group">
+            <img [src]="image" class="img-thumbnail" />
+          </div>
+          <div class="from-group">
+            <input
+              type="file"
+              (change)="chargeImage($event)"
+              accept=".jpg, .jpeg, .png, .gif"
+            />
+          </div>
+          <app-modal-action-buttons></app-modal-action-buttons>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

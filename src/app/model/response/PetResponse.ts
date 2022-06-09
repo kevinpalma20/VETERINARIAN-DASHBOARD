@@ -1,8 +1,8 @@
 export interface PetResponse {
-  idMascota?: number;
+  idMascota: number;
   mascota?: string;
   sexo?: string;
-  imagen?: null;
+  imagen: string;
   raza?: string;
   cliente?: string;
   createdDate?: string;

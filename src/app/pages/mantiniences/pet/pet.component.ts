@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PetService } from 'src/app/services/pet.service';
-import { PetResponse } from 'src/app/model/response/PetResponse';
-import { RaceResponse } from 'src/app/model/response/RaceResponse';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
+import { PetResponse } from 'src/app/model/response/entity/PetResponse';
+import { RaceResponse } from 'src/app/model/response/entity/RaceResponse';
 import { ResponsePetsCollection } from 'src/app/model/response/ResponsePetsCollection';
 
 @Component({
@@ -11,13 +11,10 @@ import { ResponsePetsCollection } from 'src/app/model/response/ResponsePetsColle
   templateUrl: './pet.component.html',
 })
 export class PetComponent implements OnInit {
-  public image: string = '';
   public id: number = 0;
+  public image: string = '';
 
   public loading: boolean = true;
-
-  public message: string = '';
-  public showAlert: boolean = false;
 
   /** Pages */
   public to: number = 0;
@@ -41,12 +38,14 @@ export class PetComponent implements OnInit {
   }
 
   charguePets(pages: number) {
+    this.loading = true;
     this.petService
       .retrive(pages)
       .subscribe((response: ResponsePetsCollection) => {
         this.totalCollection = response.total;
         this.pagesTotal = response.pages;
         this.array = response.collection;
+
         this.loading = false;
       }),
       (err: any) => this.showAlertService.showMessageError(err);

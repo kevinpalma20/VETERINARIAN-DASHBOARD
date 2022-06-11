@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ShowAlertService {
-  public showMessageError(error: any): any {
+  public showMessageError(error: any): void {
     Swal.fire({
       title: error.error.message,
       text: error.error.error,
@@ -13,7 +13,17 @@ export class ShowAlertService {
     });
   }
 
-  public showMessageSuccess(text: string): any {
+  public showMessageSuccess(text: string): void {
     Swal.fire({ text, icon: 'success' });
+  }
+
+  public showToast(text: string, success: boolean): void {
+    Swal.fire({
+      text: text,
+      icon: success ? 'success' : 'error',
+      customClass: { container: 'position-absolute' },
+      toast: true,
+      position: 'bottom-right',
+    });
   }
 }

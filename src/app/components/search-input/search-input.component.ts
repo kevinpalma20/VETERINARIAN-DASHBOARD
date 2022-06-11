@@ -4,4 +4,6 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-search-input',
   templateUrl: './search-input.component.html',
 })
-export class SearchInputComponent {}
+export class SearchInputComponent {
+  @Input() placeholder: string = 'Buscar';
+}

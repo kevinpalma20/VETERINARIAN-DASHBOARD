@@ -9,11 +9,13 @@ import { DonutComponent } from './donut/donut.component';
 import { BoosterComponent } from './booster/booster.component';
 import { LoadingComponent } from './loading/loading.component';
 import { SearchInputComponent } from './search-input/search-input.component';
-import { ModalPetComponent } from './modal-pet/modal-pet.component';
-import { AlertMessageComponent } from './alert-message/alert-message.component';
-import { ModalUpdateFileComponent } from './modal-update-file/modal-update-file.component';
-import { ButtonModalCloseComponent } from './button-modal-close/button-modal-close.component';
-import { ModalActionButtonsComponent } from './modal-action-buttons/modal-action-buttons.component';
+import { ModalPetComponent } from './modals/modal-pet/modal-pet.component';
+import { ModalUpdateFileComponent } from './modals/modal-update-file/modal-update-file.component';
+import { ButtonModalCloseComponent } from './modals/button-modal-close/button-modal-close.component';
+import { ModalActionButtonsComponent } from './modals/modal-action-buttons/modal-action-buttons.component';
+import { ModalAddCustomerComponent } from './modals/modal-add-customer/modal-add-customer.component';
+import { HeaderModalComponent } from './modals/header-modal/header-modal.component';
+import { ModalCustomerSelectTableComponent } from './modals/modal-customer-select-table/modal-customer-select-table.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,12 @@ import { ModalActionButtonsComponent } from './modal-action-buttons/modal-action
     LoadingComponent,
     SearchInputComponent,
     ModalPetComponent,
-    AlertMessageComponent,
     ModalUpdateFileComponent,
     ButtonModalCloseComponent,
     ModalActionButtonsComponent,
+    ModalAddCustomerComponent,
+    HeaderModalComponent,
+    ModalCustomerSelectTableComponent,
   ],
   exports: [
     BoosterComponent,
@@ -33,10 +37,11 @@ import { ModalActionButtonsComponent } from './modal-action-buttons/modal-action
     LoadingComponent,
     SearchInputComponent,
     ModalPetComponent,
-    AlertMessageComponent,
     ModalUpdateFileComponent,
     ButtonModalCloseComponent,
     ModalActionButtonsComponent,
+    ModalAddCustomerComponent,
+    ModalCustomerSelectTableComponent,
   ],
   imports: [CommonModule, FormsModule, NgChartsModule],
 })

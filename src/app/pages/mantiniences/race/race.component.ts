@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { RaceService } from 'src/app/services/race.service';
 import { Response } from '../../../model/response/Response';
 import { RaceRequest } from 'src/app/model/request/RaceRequest';
-import { RaceResponse } from 'src/app/model/response/RaceResponse';
+import { RaceResponse } from 'src/app/model/response/entity/RaceResponse';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
 import { ResponseRacesCollection } from 'src/app/model/response/ResponseRacesCollection';
 

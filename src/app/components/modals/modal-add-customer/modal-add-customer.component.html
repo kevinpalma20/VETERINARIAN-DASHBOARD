@@ -1,0 +1,66 @@
+<div
+  tabindex="-1"
+  aria-hidden="true"
+  class="modal fade"
+  id="modalSaveCustomer"
+  aria-labelledby="modalSaveCustomerLabel"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <app-header-modal header="Registro de clientes"></app-header-modal>
+      <div class="modal-body">
+        <form
+          id="petform"
+          (ngSubmit)="saveCustomer()"
+          class="form-horizontal form-material"
+        >
+          <div class="form-group">
+            <app-search-input placeholder="Buscar cliente"></app-search-input>
+          </div>
+          <div class="row form-group">
+            <div class="col-5">
+              <label class="control-label"> Nombre: </label>
+              <input class="form-control" id="recipient-name" name="name" />
+            </div>
+            <div class="col-7">
+              <label class="control-label"> Apellidos: </label>
+              <input
+                class="form-control"
+                id="recipient-lastname"
+                name="lastname"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Email: </label>
+            <input
+              type="email"
+              class="form-control"
+              id="recipient-email"
+              name="email"
+            />
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Dirección: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-address"
+              name="address"
+            />
+          </div>
+          <div class="form-group">
+            <label class="control-label"> Teléfono: </label>
+            <input
+              type="tel"
+              class="form-control"
+              id="recipient-phone"
+              name="phone"
+            />
+          </div>
+          <app-modal-action-buttons></app-modal-action-buttons>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

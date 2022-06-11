@@ -1,19 +1,20 @@
-<div class="row animated fadeIn fast">
-  <div class="col-5">
-    <form>
-      <div class="card">
-        <div class="card-body">
-          <div class="form-group">
-            <label for="searchPet">Buscar mascota</label>
-            <input
-              required
-              class="form-control"
-              id="searchPet"
-              placeholder="Ingresar datos de mascota"
-            />
-          </div>
+<form>
+  <div class="card">
+    <div class="card-body">
+      <div class="row form-group">
+        <div class="col-7">
+          <input
+            required
+            id="search-input"
+            class="form-control"
+            [placeholder]="placeholder"
+          />
+        </div>
+
+        <div class="col-5">
+          <button class="btn btn-info btn-block">Buscar</button>
         </div>
       </div>
-    </form>
+    </div>
   </div>
-</div>
+</form>

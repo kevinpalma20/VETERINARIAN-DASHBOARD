@@ -1,24 +1,27 @@
 <app-modal-pet></app-modal-pet>
+<app-modal-customer-select-table [idPet]="id"></app-modal-customer-select-table>
 <app-modal-update-file [image]="image" [id]="id"></app-modal-update-file>
 
 <app-loading [loading]="loading"></app-loading>
-<app-search-input *ngIf="!loading"></app-search-input>
 
 <div class="row animated fadeIn fast" *ngIf="!loading">
   <div class="col-12">
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <div class="col-8">
+          <div class="col-2">
             <h4 class="card-title">Mascotas</h4>
             <h5 class="card-subtitle">
-              Total de mascotas regitradas: {{ totalCollection }}
+              Total de mascotas: {{ totalCollection }}
             </h5>
           </div>
-          <div class="col-4">
+          <div class="col-5">
+            <app-search-input placeholder="Buscar mascota"></app-search-input>
+          </div>
+          <div class="col-5">
             <div class="text-right">
               <button
-                class="btn btn-light text-themecolor"
+                class="btn btn-light text-themecolor btn-block"
                 data-toggle="modal"
                 data-target="#modalSavePet"
               >
@@ -26,11 +29,21 @@
                 Registrar nueva mascota
               </button>
             </div>
+            <br />
+            <div class="text-right">
+              <button
+                class="btn btn-light text-themecolor btn-block"
+                (click)="this.charguePets(0)"
+              >
+                <i class="fa fa-eye mr-2"></i>
+                Actualizar
+              </button>
+            </div>
           </div>
         </div>
 
         <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Nombre</th>
@@ -41,7 +54,6 @@
                 <th>Fecha de nacimiento</th>
                 <th>Fecha de admición</th>
                 <th>Estado</th>
-                <th class="text-nowrap">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -57,24 +69,28 @@
                     *ngIf="item.imagen"
                     [src]="item.imagen"
                     class="img-thumbnail"
-                    style="width: 250px"
+                    style="width: 350px"
                   />
                   <span *ngIf="!item.imagen">No tiene imagen</span>
                 </td>
-                <td>{{ item.cliente }}</td>
+                <td>
+                  <button
+                    data-toggle="modal"
+                    data-target="#modalSelectCustomer"
+                    class="btn btn-info"
+                    *ngIf="!item.cliente"
+                    (click)="setImageInput(item.idMascota, item.imagen)"
+                  >
+                    <i class="fa fa-plus mr-2"></i>
+                    Seleccionar un cliente
+                  </button>
+                  <span *ngIf="item.cliente"> {{ item.cliente }} </span>
+                </td>
                 <td>{{ item.raza }}</td>
                 <td>{{ item.sexo }}</td>
                 <td>{{ item.nacimiento }}</td>
                 <td>{{ item.createdDate }}</td>
                 <td>{{ item.estado }}</td>
-                <td class="text-nowrap text-center">
-                  <a data-toggle="tooltip" data-original-title="Edit">
-                    <i class="fa fa-pencil text-inverse m-r-10"></i>
-                  </a>
-                  <a data-toggle="tooltip" data-original-title="Close">
-                    <i class="fa fa-close text-danger"></i>
-                  </a>
-                </td>
               </tr>
             </tbody>
           </table>

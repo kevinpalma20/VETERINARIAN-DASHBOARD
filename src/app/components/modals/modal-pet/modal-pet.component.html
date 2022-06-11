@@ -7,10 +7,7 @@
 >
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Registro de mascotas</h4>
-        <app-button-modal-close></app-button-modal-close>
-      </div>
+      <app-header-modal header="Registro de mascota"></app-header-modal>
       <div class="modal-body">
         <form
           id="petform"
@@ -39,7 +36,6 @@
               [(ngModel)]="petRequest.nacimiento"
             />
           </div>
-
           <div class="form-group">
             <div class="form-check">
               <input
@@ -79,17 +75,9 @@
                 {{ item.name }}
               </option>
             </select>
-          </div>
-
+          </div>  
           <app-modal-action-buttons></app-modal-action-buttons>
         </form>
-      </div>
-
-      <div class="modal-footer" *ngIf="showAlert">
-        <app-alert-message
-          [message]="message"
-          [success]="success"
-        ></app-alert-message>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@ import { PetService } from 'src/app/services/pet.service';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
 import { PetResponse } from 'src/app/model/response/entity/PetResponse';
 import { RaceResponse } from 'src/app/model/response/entity/RaceResponse';
-import { ResponsePetsCollection } from 'src/app/model/response/ResponsePetsCollection';
+import { ResponsePetsCollection } from 'src/app/model/response/collections/ResponsePetsCollection';
 
 @Component({
   selector: 'app-pet',

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 import { PetService } from 'src/app/services/pet.service';
-import { Response } from 'src/app/model/response/Response';
+import { Response } from 'src/app/model/response/MessageResponse';
 import { RaceService } from 'src/app/services/race.service';
 import { PetRequest } from 'src/app/model/request/PetRequest';
 import { RaceResponse } from 'src/app/model/response/entity/RaceResponse';
-import { ResponseRacesCollection } from 'src/app/model/response/ResponseRacesCollection';
+import { ResponseRacesCollection } from 'src/app/model/response/collections/ResponseRacesCollection';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Response } from 'src/app/model/response/Response';
+import { Response } from 'src/app/model/response/MessageResponse';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
 import { CustomerRequest } from 'src/app/model/request/CustomerRequest';

@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Response } from '../model/response/Response';
+import { Response } from '../model/response/MessageResponse';
 import { SERVICE } from 'src/environments/environment';
 import { RaceRequest } from '../model/request/RaceRequest';
-import { ResponseRacesCollection } from '../model/response/ResponseRacesCollection';
+import { ResponseRacesCollection } from '../model/response/collections/ResponseRacesCollection';
 import { AuthenticationService } from './authentication.service';
 
 @Injectable({

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Response } from 'src/app/model/response/Response';
+import { Response } from 'src/app/model/response/MessageResponse';
 import { PetService } from 'src/app/services/pet.service';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
 

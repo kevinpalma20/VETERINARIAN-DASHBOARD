@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { SERVICE } from 'src/environments/environment';
 import { AuthenticationService } from './authentication.service';
-import { ResponseCustomerCollection } from '../model/response/ResponseCustomerCollection';
-import { Response } from '../model/response/Response';
+import { ResponseCustomerCollection } from '../model/response/collections/ResponseCustomerCollection';
+import { Response } from '../model/response/MessageResponse';
 import { CustomerRequest } from '../model/request/CustomerRequest';
 
 @Injectable({

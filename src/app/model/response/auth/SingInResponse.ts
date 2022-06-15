@@ -1,4 +1,4 @@
-import { Menu } from './routes/MenuReponse';
+import { Menu } from '../routes/MenuReponse';
 
 export interface SingInResponse {
   token: string;

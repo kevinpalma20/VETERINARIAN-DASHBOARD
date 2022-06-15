@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SERVICE } from 'src/environments/environment';
 
-import { Response } from '../model/response/Response';
+import { Response } from '../model/response/MessageResponse';
 import { PetRequest } from '../model/request/PetRequest';
 import { AuthenticationService } from './authentication.service';
-import { ResponsePetsCollection } from '../model/response/ResponsePetsCollection';
+import { ResponsePetsCollection } from '../model/response/collections/ResponsePetsCollection';
 import { AddCustomerInPet } from '../model/request/AddCustomerInPetRequest';
 
 @Injectable({

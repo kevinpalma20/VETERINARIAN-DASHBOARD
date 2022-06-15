@@ -1,0 +1,81 @@
+<app-modal-add-customer></app-modal-add-customer>
+
+<app-loading [loading]="loading"></app-loading>
+
+<div class="row animated fadeIn fast" *ngIf="!loading">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-2">
+            <h4 class="card-title">Clientes</h4>
+            <h5 class="card-subtitle">Total de clientes:</h5>
+          </div>
+          <div class="col-5">
+            <app-search-input placeholder="Buscar cliente"></app-search-input>
+          </div>
+          <div class="col-5">
+            <div class="text-right">
+              <button
+                data-toggle="modal"
+                data-target="#modalSaveCustomer"
+                class="btn btn-light text-themecolor btn-block"
+              >
+                <i class="fa fa-plus mr-2"></i>
+                Registrar nuevo cliente
+              </button>
+            </div>
+            <br />
+            <div class="text-right">
+              <button
+                class="btn btn-light text-themecolor btn-block"
+                (click)="this.chargueCustomer(0)"
+              >
+                <i class="fa fa-eye mr-2"></i>
+                Actualizar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Dirección</th>
+                <th>Telefono</th>
+                <th>Fecha de admición</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of array">
+                <td>{{ item.nombres }}</td>
+                <td>{{ item.apellidos }}</td>
+                <td>{{ item.correo }}</td>
+                <td>{{ item.direccion }}</td>
+                <td>{{ item.telefono }}</td>
+                <td>{{ item.dateCreated }}</td>
+                <td>{{ item.estado }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button class="btn btn-secondary" (click)="changuePage(true)">
+          <i class="fa fa-arrow-left"></i>
+          &nbsp; Anterior
+        </button>
+        &nbsp;
+        <button class="btn btn-secondary" (click)="changuePage(false)">
+          Siguiente &nbsp;
+          <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

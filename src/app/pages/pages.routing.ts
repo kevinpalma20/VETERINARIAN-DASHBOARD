@@ -16,6 +16,7 @@ import { UserComponent } from './mantiniences/user/user.component';
 
 import { RoleGuard } from '../guards/role.guard';
 import { RaceComponent } from './mantiniences/race/race.component';
+import { CustomerComponent } from './mantiniences/customer/customer.component';
 
 const routes: Routes = [
   {
@@ -36,9 +37,9 @@ const routes: Routes = [
       },
       { path: 'settings', component: AccountSettingsComponent },
 
-      //Mantiniences
-      { path: 'mascotas', component: PetComponent },
       { path: 'razas', component: RaceComponent },
+      { path: 'mascotas', component: PetComponent },
+      { path: 'clientes', component: CustomerComponent },
       { path: 'usuarios', canActivate: [RoleGuard], component: UserComponent },
     ],
   },

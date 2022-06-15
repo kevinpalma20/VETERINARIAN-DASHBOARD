@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { SharedModule } from '../shared/shared.module';
-import { ComponentsModule } from '../components/components.module';
-
-import { DashboardComponent } from './dashboard-plane/dashboard/dashboard.component';
-import { ProgressComponent } from './dashboard-plane/progress/progress.component';
-import { Graphica1Component } from './dashboard-plane/graphica1/graphica1.component';
 import { PagesComponent } from './pages.component';
-import { AccountSettingsComponent } from './dashboard-plane/account-settings/account-settings.component';
+import { SharedModule } from '../shared/shared.module';
 import { PetComponent } from './mantiniences/pet/pet.component';
 import { UserComponent } from './mantiniences/user/user.component';
+import { ComponentsModule } from '../components/components.module';
 import { RaceComponent } from './mantiniences/race/race.component';
+import { ProgressComponent } from './dashboard-plane/progress/progress.component';
+import { DashboardComponent } from './dashboard-plane/dashboard/dashboard.component';
+import { Graphica1Component } from './dashboard-plane/graphica1/graphica1.component';
+import { AccountSettingsComponent } from './dashboard-plane/account-settings/account-settings.component';
+import { CustomerComponent } from './mantiniences/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { RaceComponent } from './mantiniences/race/race.component';
     PetComponent,
     UserComponent,
     RaceComponent,
+    CustomerComponent,
   ],
   exports: [
     DashboardComponent,
@@ -35,8 +36,8 @@ import { RaceComponent } from './mantiniences/race/race.component';
   ],
   imports: [
     CommonModule,
-    SharedModule,
     RouterModule,
+    SharedModule,
     FormsModule,
     ComponentsModule,
   ],

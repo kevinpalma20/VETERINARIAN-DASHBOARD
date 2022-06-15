@@ -1,0 +1,56 @@
+<div
+  tabindex="-1"
+  aria-hidden="true"
+  class="modal fade"
+  id="modalSelectCustomer"
+  aria-labelledby="modalSelectCustomerLabel"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <app-header-modal header="Selecione un cliente"></app-header-modal>
+
+      <div class="modal-body">
+        <form
+          id="petform"
+          class="form-horizontal form-material"
+          (ngSubmit)="addCustomer()"
+        >
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Fecha de admición</th>
+                  <th>Estado</th>
+                  <th>Selecionar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of collection">
+                  <td>{{ item.nombres + " " + item.apellidos }}</td>
+                  <td>{{ item.dateCreated }}</td>
+                  <td>{{ item.estado }}</td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="customer"
+                      [id]="item.idCliente"
+                      [value]="item.idCliente"
+                      class="form-check-input"
+                      [(ngModel)]="request.idCustomer"
+                    />
+                    <label class="form-check-label" [for]="item.idCliente">
+                      Elejir
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <app-modal-action-buttons></app-modal-action-buttons>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

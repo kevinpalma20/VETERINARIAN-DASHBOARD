@@ -24,7 +24,7 @@ export class LoginComponent {
     this.request.password = 'hola123456';
 
     this.authenticationService.singIn(this.request).subscribe(
-      () => this.router.navigateByUrl('/'),
+      () => this.router.navigateByUrl('/dashboard'),
       (err: any) => this.showAlertService.showMessageError(err)
     );
   }

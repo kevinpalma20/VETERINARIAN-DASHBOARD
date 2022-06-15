@@ -11,14 +11,13 @@ import { UserComponent } from './mantiniences/user/user.component';
 import { ComponentsModule } from '../components/components.module';
 import { RaceComponent } from './mantiniences/race/race.component';
 import { ProgressComponent } from './dashboard-plane/progress/progress.component';
-import { DashboardComponent } from './dashboard-plane/dashboard/dashboard.component';
 import { Graphica1Component } from './dashboard-plane/graphica1/graphica1.component';
 import { AccountSettingsComponent } from './dashboard-plane/account-settings/account-settings.component';
 import { CustomerComponent } from './mantiniences/customer/customer.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
     ProgressComponent,
     Graphica1Component,
     PagesComponent,
@@ -27,13 +26,9 @@ import { CustomerComponent } from './mantiniences/customer/customer.component';
     UserComponent,
     RaceComponent,
     CustomerComponent,
+    MyProfileComponent,
   ],
-  exports: [
-    DashboardComponent,
-    ProgressComponent,
-    Graphica1Component,
-    PagesComponent,
-  ],
+  exports: [ProgressComponent, Graphica1Component, PagesComponent],
   imports: [
     CommonModule,
     RouterModule,

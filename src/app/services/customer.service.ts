@@ -6,6 +6,7 @@ import { SERVICE } from 'src/environments/environment';
 import { AuthenticationService } from './authentication.service';
 import { ResponseCustomerCollection } from '../model/response/ResponseCustomerCollection';
 import { Response } from '../model/response/Response';
+import { CustomerRequest } from '../model/request/CustomerRequest';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class CustomerService {
 
   constructor(
     private http: HttpClient,
-    private authenticationService: AuthenticationService
+    private service: AuthenticationService
   ) {}
 
   private builderEndpoint(active: boolean, page: number): string {
@@ -27,14 +28,21 @@ export class CustomerService {
   public retriveActive(page: number): Observable<ResponseCustomerCollection> {
     return this.http.get<ResponseCustomerCollection>(
       this.builderEndpoint(true, page),
-      this.authenticationService.setAuthentication()
+      this.service.setAuthentication()
     );
   }
 
   public retrive(page: number): Observable<ResponseCustomerCollection> {
     return this.http.get<ResponseCustomerCollection>(
       this.builderEndpoint(false, page),
-      this.authenticationService.setAuthentication()
+      this.service.setAuthentication()
+    );
+  }
+  public save(request: CustomerRequest): Observable<Response> {
+    return this.http.post<Response>(
+      this.SERVICE_CUSTOMER.concat('/save'),
+      request,
+      this.service.setAuthentication()
     );
   }
 }

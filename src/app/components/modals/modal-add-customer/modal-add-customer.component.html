@@ -14,17 +14,20 @@
           (ngSubmit)="saveCustomer()"
           class="form-horizontal form-material"
         >
-          <div class="form-group">
-            <app-search-input placeholder="Buscar cliente"></app-search-input>
-          </div>
           <div class="row form-group">
             <div class="col-5">
               <label class="control-label"> Nombre: </label>
-              <input class="form-control" id="recipient-name" name="name" />
+              <input
+                [(ngModel)]="request.nombres"
+                class="form-control"
+                id="recipient-name"
+                name="name"
+              />
             </div>
             <div class="col-7">
               <label class="control-label"> Apellidos: </label>
               <input
+                [(ngModel)]="request.apellidos"
                 class="form-control"
                 id="recipient-lastname"
                 name="lastname"
@@ -34,6 +37,7 @@
           <div class="form-group">
             <label class="control-label"> Email: </label>
             <input
+              [(ngModel)]="request.correo"
               type="email"
               class="form-control"
               id="recipient-email"
@@ -43,6 +47,7 @@
           <div class="form-group">
             <label class="control-label"> Dirección: </label>
             <input
+              [(ngModel)]="request.direccion"
               type="text"
               class="form-control"
               id="recipient-address"
@@ -52,7 +57,8 @@
           <div class="form-group">
             <label class="control-label"> Teléfono: </label>
             <input
-              type="tel"
+              [(ngModel)]="request.telefono"
+              type="number"
               class="form-control"
               id="recipient-phone"
               name="phone"

@@ -14,6 +14,7 @@ import { ProgressComponent } from './dashboard-plane/progress/progress.component
 import { DashboardComponent } from './dashboard-plane/dashboard/dashboard.component';
 import { Graphica1Component } from './dashboard-plane/graphica1/graphica1.component';
 import { AccountSettingsComponent } from './dashboard-plane/account-settings/account-settings.component';
+import { CustomerComponent } from './mantiniences/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AccountSettingsComponent } from './dashboard-plane/account-settings/acc
     PetComponent,
     UserComponent,
     RaceComponent,
+    CustomerComponent,
   ],
   exports: [
     DashboardComponent,

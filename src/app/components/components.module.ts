@@ -16,6 +16,8 @@ import { ModalActionButtonsComponent } from './modals/modal-action-buttons/modal
 import { ModalAddCustomerComponent } from './modals/modal-add-customer/modal-add-customer.component';
 import { HeaderModalComponent } from './modals/header-modal/header-modal.component';
 import { ModalCustomerSelectTableComponent } from './modals/modal-customer-select-table/modal-customer-select-table.component';
+import { ControlFormLabelComponent } from './control-form-label/control-form-label.component';
+import { PickerColorItemComponent } from './picker-color-item/picker-color-item.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ModalCustomerSelectTableComponent } from './modals/modal-customer-selec
     ModalAddCustomerComponent,
     HeaderModalComponent,
     ModalCustomerSelectTableComponent,
+    ControlFormLabelComponent,
+    PickerColorItemComponent,
   ],
   exports: [
     BoosterComponent,
@@ -42,6 +46,8 @@ import { ModalCustomerSelectTableComponent } from './modals/modal-customer-selec
     ModalActionButtonsComponent,
     ModalAddCustomerComponent,
     ModalCustomerSelectTableComponent,
+    ControlFormLabelComponent,
+    PickerColorItemComponent,
   ],
   imports: [CommonModule, FormsModule, NgChartsModule],
 })

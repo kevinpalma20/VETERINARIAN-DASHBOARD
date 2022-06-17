@@ -9,38 +9,33 @@
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <div class="col-2">
+          <div class="col-md-2">
             <h4 class="card-title">Mascotas</h4>
-            <h5 class="card-subtitle">
-              Total de mascotas: {{ totalCollection }}
-            </h5>
+            <h5 class="card-subtitle">Total {{ totalCollection }}</h5>
           </div>
-          <div class="col-5">
+          <div class="col-md-5">
             <app-search-input placeholder="Buscar mascota"></app-search-input>
           </div>
-          <div class="col-5">
-            <div class="text-right">
-              <button
-                class="btn btn-light text-themecolor btn-block"
-                data-toggle="modal"
-                data-target="#modalSavePet"
-              >
-                <i class="fa fa-plus mr-2"></i>
-                Registrar nueva mascota
-              </button>
-            </div>
+          <div class="col-md-5">
+            <button
+              data-toggle="modal"
+              data-target="#modalSavePet"
+              class="btn btn-light text-themecolor btn-block"
+            >
+              <i class="fa fa-plus mr-2"></i>
+              Registrar nueva mascota
+            </button>
             <br />
-            <div class="text-right">
-              <button
-                class="btn btn-light text-themecolor btn-block"
-                (click)="this.charguePets(0)"
-              >
-                <i class="fa fa-eye mr-2"></i>
-                Actualizar
-              </button>
-            </div>
+            <button
+              class="btn btn-light text-themecolor btn-block"
+              (click)="this.charguePets(0)"
+            >
+              <i class="fa fa-eye mr-2"></i>
+              Actualizar
+            </button>
           </div>
         </div>
+        <hr />
 
         <div class="table-responsive">
           <table class="table table-bordered table-hover">

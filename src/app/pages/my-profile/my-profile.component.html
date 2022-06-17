@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Mi perfil de usuario</h4>
+        <h6 class="card-subtitle">Rol</h6>
+
+        <form class="form p-t-20">
+          <app-control-form-label
+            icon="ti-user"
+            [value]="data.fullName"
+            title="Nombres y apellidos"
+          ></app-control-form-label>
+          <app-control-form-label
+            icon="ti-headphone"
+            [value]="data.phone"
+            title="Telefono"
+          ></app-control-form-label>
+          <app-control-form-label
+            icon="ti-email"
+            [value]="data.email"
+            title="Correo electrónico"
+          ></app-control-form-label>
+
+          <!--<button type="submit" class="btn btn-success btn-block">
+            <i class="fa fa-save"></i>
+            Guardar cambios
+          </button>-->
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Avatar</h4>
+        <h6 class="card-subtitle">Imagen del usuario</h6>
+
+        <div class="text-center"></div>
+      </div>
+    </div>
+  </div>
+</div>

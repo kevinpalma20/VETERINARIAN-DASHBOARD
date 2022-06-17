@@ -5,20 +5,19 @@
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <div class="col-8">
+          <div class="col-md-8">
             <h4 class="card-title">Razas</h4>
-            <h5 class="card-subtitle">
-              Total de razas regitradas: {{ totalCollection }}
-            </h5>
+            <h5 class="card-subtitle">Total {{ totalCollection }}</h5>
           </div>
 
-          <div class="col-4">
-            <div class="text-right">
-              <button class="btn btn-light text-themecolor" (click)="save()">
-                <i class="fa fa-plus mr-2"></i>
-                Registrar nueva raza
-              </button>
-            </div>
+          <div class="col-md-4">
+            <button
+              class="btn btn-light text-themecolor btn-block"
+              (click)="save()"
+            >
+              <i class="fa fa-plus mr-2"></i>
+              Registrar nueva raza
+            </button>
           </div>
         </div>
 

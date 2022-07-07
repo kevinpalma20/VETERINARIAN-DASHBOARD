@@ -20,8 +20,8 @@ export class LoginComponent {
   ) {}
 
   login() {
-    this.request.email = 'umb.kevsidorov@gmail.com';
-    this.request.password = 'hola123456';
+    //this.request.email = 'umb.kevsidorov@gmail.com';
+    //this.request.password = 'hola123456';
 
     this.authenticationService.singIn(this.request).subscribe(
       () => this.router.navigateByUrl('/dashboard'),

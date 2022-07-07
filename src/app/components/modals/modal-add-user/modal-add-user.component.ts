@@ -1,23 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+import { UserService } from 'src/app/services/user.service';
 import { Response } from 'src/app/model/response/MessageResponse';
-import { CustomerService } from 'src/app/services/customer.service';
+import { UserRequest } from './../../../model/request/UserRequest';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
-import { CustomerRequest } from 'src/app/model/request/CustomerRequest';
 
 @Component({
-  selector: 'app-modal-add-customer',
-  templateUrl: './modal-add-customer.component.html',
+  selector: 'app-modal-add-user',
+  templateUrl: './modal-add-user.component.html',
 })
-export class ModalAddCustomerComponent {
-  public request: CustomerRequest = {};
-
+export class ModalAddUserComponent {
+  public request: UserRequest = {};
   constructor(
-    private service: CustomerService,
+    private service: UserService,
     private showToast: ShowAlertService
   ) {}
 
-  saveCustomer(): void {
+  save(): void {
     this.service.save(this.request).subscribe(
       (response: Response) => this.showToast.showToast(response.message, true),
       (error: any) => this.showToast.showToast(error.error.message, false)

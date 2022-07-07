@@ -4,7 +4,7 @@ import { PetService } from 'src/app/services/pet.service';
 import { Response } from 'src/app/model/response/MessageResponse';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ShowAlertService } from 'src/app/services/show-alert.service';
-import { CustomerResponse } from 'src/app/model/response/entity/Customer';
+import { CustomerResponse } from 'src/app/model/response/entity/CustomerResponse';
 import { AddCustomerInPet } from 'src/app/model/request/AddCustomerInPetRequest';
 import { ResponseCustomerCollection } from 'src/app/model/response/collections/ResponseCustomerCollection';
 

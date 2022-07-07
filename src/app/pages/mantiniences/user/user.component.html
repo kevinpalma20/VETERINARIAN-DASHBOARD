@@ -1,1 +1,66 @@
-<p>user works!</p>
+<app-loading [loading]="loading"></app-loading>
+<app-modal-add-user></app-modal-add-user>
+
+<div class="row animated fadeIn fast" *ngIf="!loading">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="card-title">Usuarios</h4>
+            <h5 class="card-subtitle">
+              Total de usuarios {{ totalCollection }}
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <button
+              data-toggle="modal"
+              data-target="#modalSaveUser"
+              class="btn btn-light text-themecolor btn-block"
+            >
+              <i class="fa fa-plus mr-2"></i>
+              Registrar nuevo usuario
+            </button>
+            <br />
+            <button
+              class="btn btn-light text-themecolor btn-block"
+              (click)="this.chargue(0)"
+            >
+              <i class="fa fa-eye mr-2"></i>
+              Actualizar
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Dni</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Dirección</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of array">
+                <td>{{ item.name }}</td>
+                <td>{{ item.lastname }}</td>
+                <td>{{ item.dni }}</td>
+                <td>{{ item.cellphone }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.role }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.state }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

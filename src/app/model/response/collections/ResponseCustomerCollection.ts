@@ -1,4 +1,4 @@
-import { CustomerResponse } from '../entity/Customer';
+import { CustomerResponse } from '../entity/CustomerResponse';
 import { ResponseCollection } from './ResponseCollection';
 
 export interface ResponseCustomerCollection extends ResponseCollection {

@@ -1,0 +1,95 @@
+<app-loading [loading]="loading"></app-loading>
+
+<div class="container" *ngIf="!loading">
+  <div class="row">
+    <div class="col-sm-4">
+      <form (ngSubmit)="save()">
+        <div class="card">
+          <div class="card-header">
+            <h4>Registrar nuevos servicios</h4>
+          </div>
+
+          <div class="card-body">
+            <div class="form-group">
+              <input
+                [(ngModel)]="request.nombre"
+                placeholder="Nombre del servicio"
+                class="form-control"
+                name="name"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                [(ngModel)]="request.descripcion"
+                placeholder="Descripción del servicio"
+                class="form-control"
+                name="description"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                [(ngModel)]="request.costo"
+                placeholder="Costo del servicio"
+                class="form-control"
+                type="number"
+                name="price"
+              />
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            &nbsp;
+            <button class="btn btn-info" type="reset">Limpiar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-header">
+          <h4>Lista de servicios registrados</h4>
+          <h5 class="card-subtitle">Total {{ totalCollection }}</h5>
+        </div>
+        <div class="card-body">
+          <button
+            class="btn btn-light text-themecolor btn-block"
+            (click)="this.chargue(0)"
+          >
+            <i class="fa fa-eye mr-2"></i>
+            Actualizar lista
+          </button>
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Nombres</th>
+                  <th>Descripción</th>
+                  <th>Costo</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let item of array">
+                  <td>{{ item.servicio }}</td>
+                  <td>{{ item.descripcion }}</td>
+                  <td>{{ item.costo + " Soles." }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button class="btn btn-secondary" (click)="changuePage(true)">
+            <i class="fa fa-arrow-left"></i>
+            &nbsp; Anterior
+          </button>
+          &nbsp;
+          <button class="btn btn-secondary" (click)="changuePage(false)">
+            Siguiente &nbsp;
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 };
 
-export const SERVICE = 'http://192.168.1.7:9096';
+export const SERVICE = 'http://localhost:9096';
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,0 +1,48 @@
+<div
+  tabindex="-1"
+  aria-hidden="true"
+  class="modal fade"
+  id="modalCitaSave"
+  aria-labelledby="modalCitaSaveLabel"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <app-header-modal header="Registrar una nueva cita"></app-header-modal>
+
+      <div class="modal-body">
+        <form
+          id="petform"
+          (ngSubmit)="save()"
+          class="form-horizontal form-material"
+        >
+          <ng-autocomplete
+            [data]="collection"
+            [searchKeyword]="'apellidos'"
+            (selected)="selectEvent($event)"
+            placeholder="Seleccione un cliente"
+            [itemTemplate]="templateCustomer"
+            [notFoundTemplate]="notFoundCustomer"
+          ></ng-autocomplete>
+
+          <ng-template #templateCustomer let-item>
+            <a [innerHTML]="item.apellidos + ', ' + item.nombres"></a>
+          </ng-template>
+
+          <ng-template #notFoundCustomer let-notFound>
+            <div [innerHTML]="notFound"></div>
+          </ng-template>
+          <hr />
+          <div class="form-group">
+            <label class="control-label"> Propocito: </label>
+            <input
+              [(ngModel)]="request.description"
+              class="form-control"
+              name="prop"
+            />
+          </div>
+          <app-modal-action-buttons></app-modal-action-buttons>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

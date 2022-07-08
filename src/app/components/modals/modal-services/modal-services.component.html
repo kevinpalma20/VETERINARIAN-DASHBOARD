@@ -1,0 +1,70 @@
+<div
+  tabindex="-1"
+  aria-hidden="true"
+  class="modal fade"
+  id="modalServicesByAppointment"
+  aria-labelledby="modalServicesByAppointmentLabel"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <app-header-modal header="Servicios de esta cita"></app-header-modal>
+      <div class="modal-body">
+        <ng-autocomplete
+          [data]="services"
+          [searchKeyword]="'servicio'"
+          (selected)="selectEvent($event)"
+          placeholder="Seleccione un servico"
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate"
+        >
+        </ng-autocomplete>
+
+        <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.servicio"></a>
+        </ng-template>
+
+        <ng-template #notFoundTemplate let-notFound>
+          <div [innerHTML]="notFound"></div>
+        </ng-template>
+        <hr />
+        <div *ngIf="servicesSelected.length > 0">
+          <h3>Servicios seleccionados</h3>
+          <div *ngFor="let item of servicesSelected">
+            <span class="badge badge-secondary m-2 p-2">
+              {{ item.servicio }}
+              <span class="badge badge-danger m-1 p-1" (click)="remove(item)">
+                X
+              </span>
+            </span>
+          </div>
+
+          <br />
+          <button class="btn btn-primary btn-block" (click)="addServices()">
+            Agregar servicios
+          </button>
+        </div>
+        <hr />
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Costo</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of collection">
+                <td>{{ item.servicio }}</td>
+                <td>
+                  {{ item.subtotal ? item.subtotal : item.costo }}
+                  {{ " Soles." }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

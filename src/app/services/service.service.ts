@@ -1,3 +1,4 @@
+import { ServiceResponse } from './../model/response/entity/ServiceResponse';
 import { ServiceRequest } from './../model/request/ServiceRequest';
 import { ResponseServiceCollection } from './../model/response/collections/ResponseServiceCollection';
 import { Observable } from 'rxjs';
@@ -28,6 +29,13 @@ export class ServiceService {
   public retrieve(page: number): Observable<ResponseServiceCollection> {
     return this.http.get<ResponseServiceCollection>(
       this.SERVICE.concat(`?page=${page}&size=5`),
+      this.authentication.setAuthentication()
+    );
+  }
+
+  public retrieveAll(): Observable<ResponseServiceCollection> {
+    return this.http.get<ResponseServiceCollection>(
+      this.SERVICE,
       this.authentication.setAuthentication()
     );
   }

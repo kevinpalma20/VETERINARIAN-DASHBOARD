@@ -21,7 +21,7 @@ const routes: Routes = [
     component: PagesComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: '/dashboard/mascotas', pathMatch: 'full' },
+      { path: '', redirectTo: '/dashboard/citas', pathMatch: 'full' },
 
       { path: 'my-profile', component: MyProfileComponent },
       { path: 'settings', component: AccountSettingsComponent },

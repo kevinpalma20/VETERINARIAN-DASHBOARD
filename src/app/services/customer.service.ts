@@ -39,6 +39,13 @@ export class CustomerService {
     );
   }
 
+  public retriveAll(): Observable<ResponseCustomerCollection> {
+    return this.http.get<ResponseCustomerCollection>(
+      this.SERVICE_CUSTOMER + `/findActive`,
+      this.service.setAuthentication()
+    );
+  }
+
   public save(request: CustomerRequest): Observable<Response> {
     return this.http.post<Response>(
       this.SERVICE_CUSTOMER.concat('/save'),

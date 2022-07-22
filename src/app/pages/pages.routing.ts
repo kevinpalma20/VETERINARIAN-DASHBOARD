@@ -1,3 +1,4 @@
+import { HclinicaComponent } from './mantiniences/hclinica/hclinica.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,7 +9,9 @@ import { PetComponent } from './mantiniences/pet/pet.component';
 import { UserComponent } from './mantiniences/user/user.component';
 import { RaceComponent } from './mantiniences/race/race.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ProductComponent } from './mantiniences/product/product.component';
 import { ServicesComponent } from './operations/services/services.component';
+import { CategoryComponent } from './mantiniences/category/category.component';
 import { CustomerComponent } from './mantiniences/customer/customer.component';
 import { ProgressComponent } from './dashboard-plane/progress/progress.component';
 import { Graphica1Component } from './dashboard-plane/graphica1/graphica1.component';
@@ -30,6 +33,9 @@ const routes: Routes = [
       { path: 'mascotas', component: PetComponent },
       { path: 'clientes', component: CustomerComponent },
       { path: 'citas', component: AppointmentComponent },
+      { path: 'historial-clinico', component: HclinicaComponent },
+      { path: 'categorias', component: CategoryComponent },
+      { path: 'productos', component: ProductComponent },
 
       {
         path: 'progress',

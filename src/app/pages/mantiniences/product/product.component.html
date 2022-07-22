@@ -1,0 +1,152 @@
+<app-loading [loading]="loading"></app-loading>
+
+<div class="row animated fadeIn fast" *ngIf="!loading">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h4 class="card-title">Regisrar producto</h4>
+          <h5 class="card-subtitle">Total {{ totalCollection }}</h5>
+
+          <div class="card-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">
+                Nombre:
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="name"
+                [(ngModel)]="request.name"
+              />
+            </div>
+
+            <div class="row form-group">
+              <div class="col-8">
+                <label for="recipient-descripcion" class="control-label">
+                  Descripción:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="recipient-descripcion"
+                  name="descripcion"
+                  [(ngModel)]="request.descripcion"
+                />
+              </div>
+
+              <div class="col-4">
+                <label for="recipient-unidad" class="control-label">
+                  Unidad:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="recipient-unidad"
+                  name="unidad"
+                  [(ngModel)]="request.unidad"
+                />
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-4">
+                <label for="recipient-precioCompra" class="control-label">
+                  P. compra:
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="recipient-precioCompra"
+                  name="precioCompra"
+                  [(ngModel)]="request.precioCompra"
+                />
+              </div>
+
+              <div class="col-4">
+                <label for="recipient-precioVenta" class="control-label">
+                  P. venta:
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="recipient-precioVenta"
+                  name="precioVenta"
+                  [(ngModel)]="request.precioVenta"
+                />
+              </div>
+
+              <div class="col-4">
+                <label for="recipient-stock" class="control-label">
+                  Stock:
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="recipient-stock"
+                  name="stock"
+                  [(ngModel)]="request.stock"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="recipient-cat" class="control-label">
+                Categoria:
+              </label>
+              <select
+                name="raza"
+                id="recipient-cat"
+                class="form-control form-control-sm"
+                [(ngModel)]="request.categoria"
+              >
+                <option [value]="0" selected value disabled>
+                  Seleccione una categoria
+                </option>
+                <option [value]="item.id" *ngFor="let item of categories">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+
+            <button
+              class="btn btn-light text-themecolor btn-block"
+              (click)="save()"
+            >
+              <i class="fa fa-plus mr-2"></i>
+              Registrar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card p-3">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Precio de compra</th>
+                  <th>Precio de venta</th>
+                  <th>Stock</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let item of array">
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.precioCompra }}</td>
+                  <td>{{ item.precioVenta }}</td>
+                  <td>{{ item.stock }}</td>
+                  <td>{{ item.estado }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

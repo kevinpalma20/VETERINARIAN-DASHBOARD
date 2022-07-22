@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { PetComponent } from './mantiniences/pet/pet.component';
@@ -16,6 +17,9 @@ import { ProgressComponent } from './dashboard-plane/progress/progress.component
 import { Graphica1Component } from './dashboard-plane/graphica1/graphica1.component';
 import { AppointmentComponent } from './operations/appointment/appointment.component';
 import { AccountSettingsComponent } from './dashboard-plane/account-settings/account-settings.component';
+import { HclinicaComponent } from './mantiniences/hclinica/hclinica.component';
+import { CategoryComponent } from './mantiniences/category/category.component';
+import { ProductComponent } from './mantiniences/product/product.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,9 @@ import { AccountSettingsComponent } from './dashboard-plane/account-settings/acc
     MyProfileComponent,
     AppointmentComponent,
     ServicesComponent,
+    HclinicaComponent,
+    CategoryComponent,
+    ProductComponent,
   ],
   exports: [ProgressComponent, Graphica1Component, PagesComponent],
   imports: [
@@ -38,6 +45,7 @@ import { AccountSettingsComponent } from './dashboard-plane/account-settings/acc
     SharedModule,
     FormsModule,
     ComponentsModule,
+    AutocompleteLibModule,
   ],
 })
 export class PagesModule {}

@@ -28,6 +28,13 @@ export class PetService {
     );
   }
 
+  public retriveAll(): Observable<ResponsePetsCollection> {
+    return this.http.get<ResponsePetsCollection>(
+      this.SERVICE_PET + '/',
+      this.authenticationService.setAuthentication()
+    );
+  }
+
   public retrive(page: number): Observable<ResponsePetsCollection> {
     return this.http.get<ResponsePetsCollection>(
       this.SERVICE_PET.concat('/?page=' + page + '&size=2 '),

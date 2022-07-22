@@ -1,0 +1,59 @@
+<div class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <ng-autocomplete
+              [data]="pets"
+              [searchKeyword]="'mascota'"
+              (selected)="selectEvent($event)"
+              placeholder="Seleccione una mascota"
+              [itemTemplate]="itemTemplate"
+              [notFoundTemplate]="notFoundTemplate"
+            >
+            </ng-autocomplete>
+
+            <ng-template #itemTemplate let-item>
+              <a [innerHTML]="item.mascota + ', ' + item.cliente"></a>
+            </ng-template>
+
+            <ng-template #notFoundTemplate let-notFound>
+              <div [innerHTML]="notFound"></div>
+            </ng-template>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+        <hr />
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Antecedentes</th>
+                <th>Peso</th>
+                <th>Temperatura</th>
+                <th>Enfermedad</th>
+                <th>Fecha</th>
+                <th>Motivo de la consulta</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>{{ hc.antecedentes }}</td>
+                <td>{{ hc.peso }}</td>
+                <td>{{ hc.temperatura }}</td>
+                <td>{{ hc.enfermedad }}</td>
+                <td>{{ hc.fecha }}</td>
+                <td>{{ hc.mconsulta }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
